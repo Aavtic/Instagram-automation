@@ -39,11 +39,8 @@ class InstaVideoDownloader :
     def validate_web_url(self,url):
         try:
             urlopen(url)
-            return True
         except :
-            content = eval(url)
-            content = content['?params']
-            print(content, 'not valid url')
+            print("invalid url")
             exit(0)
     def get_info(self, link) : 
         session = requests.session()
